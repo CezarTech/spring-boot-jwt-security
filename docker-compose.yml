@@ -1,0 +1,17 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:15.0-alpine
+    restart: always
+    container_name: jwt_security_v3
+    environment:
+      POSTGRES_DB: jwt_security
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
